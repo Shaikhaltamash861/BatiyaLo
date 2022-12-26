@@ -55,6 +55,9 @@ const login=async(req,res,next)=>{
    
    
 }
+const test=(req,res)=>{
+    res.send('hello batiyalo')
+}
 const getUsers= async(req,res)=>{
 
 
@@ -83,3 +86,4 @@ exports.login=login;
 exports.register=register
 exports.getUsers=getUsers
 exports.getAllUser=getAllUser
+exports.test=test
