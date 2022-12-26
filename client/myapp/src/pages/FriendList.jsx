@@ -18,7 +18,7 @@ function FriendList({val,id}) {
                
                
                const getUsers=async()=>{
-             const {data}=await axios.get(`http://localhost:5000/api/getuser/${findOtherUsers}`)
+             const {data}=await axios.get(`https://batiyaloapi.onrender.com/api/getuser/${findOtherUsers}`)
              setFriends(data.message)
              
             }
@@ -33,7 +33,7 @@ function FriendList({val,id}) {
           // let profile=avatar+number;
           useEffect(()=>{
              const getLastMsg=async()=>{
-                  const {data}=await axios.get(`http://localhost:5000/api/message/getLastMsg/${val._id}`)
+                  const {data}=await axios.get(`https://batiyaloapi.onrender.com/api/message/getLastMsg/${val._id}`)
                   if(!data){return;}
                   setLastMsg(data.text)
          

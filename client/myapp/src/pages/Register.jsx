@@ -8,7 +8,7 @@ function Register() {
     const [password,setPassword]=useState()
     const navigate=useNavigate();
     const register= async()=>{
-         const {data}=await axios.post('http://localhost:5000/api/register',{
+         const {data}=await axios.post('https://batiyaloapi.onrender.com/api/register',{
           name:name,
           email:email,
           password:password

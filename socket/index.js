@@ -26,8 +26,11 @@ io.on('connection',(socket)=>{
     socket.on('sendMessage',({senderId,receiverId,text})=>{
         
         const user=getUsers(receiverId);
+        if( user?.socketId){
+
+            io.to(user.socketId).emit('getMessage',{senderId,text})
+        }
         
-           io.to(user.socketId).emit('getMessage',{senderId,text})
     })
     socket.on('disconnect',()=>{
         console.log('user is disconnected')

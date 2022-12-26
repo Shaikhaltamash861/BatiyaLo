@@ -12,7 +12,7 @@ function NewChat({id,userList,updater}) {
        
            
           const getUsers=async()=>{
-           const {data}=await axios.get(`http://localhost:5000/api/getAllUser`)
+           const {data}=await axios.get(`https://batiyaloapi.onrender.com/api/getAllUser`)
            setFriends(data)
            
          }
@@ -26,7 +26,7 @@ function NewChat({id,userList,updater}) {
    
        const addFriend= async(val)=>{
         
-        const {data}=await axios.post(`http://localhost:5000/api/conversation/newConversation`,{
+        const {data}=await axios.post(`https://batiyaloapi.onrender.com/api/conversation/newConversation`,{
           senderId:id,
           receiverId:val._id
         })

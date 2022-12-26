@@ -63,7 +63,7 @@ function Chat({user,userHandle}) {
   },[user])
   useEffect(() => {
        const getConversation=async()=>{
-          const {data}=await axios.get(`http://localhost:5000/api/conversation/${id}`)
+          const {data}=await axios.get(`https://batiyaloapi.onrender.com/api/conversation/${id}`)
         
           setConversations(data)
        }
@@ -73,12 +73,12 @@ function Chat({user,userHandle}) {
    
   useEffect(()=>{
             const getMessages=async()=>{
-              const { data } =await axios.get(`http://localhost:5000/api/message/${currentChat._id}`)
+              const { data } =await axios.get(`https://batiyaloapi.onrender.com/api/message/${currentChat._id}`)
               setMessages(data)
             }
             const getCurrentUser=async()=>{
               const findOtherUsers=currentChat?.members.find((m)=>m!==id)
-              const {data}=await axios.get(`http://localhost:5000/api/getuser/${findOtherUsers}`)
+              const {data}=await axios.get(`https://batiyaloapi.onrender.com/api/getuser/${findOtherUsers}`)
               setSelectedUser(data)
             }
             getMessages()
@@ -100,7 +100,7 @@ const handleSubmit=async(e)=>{
       text:newMeassage
 
     })
-    const {data} = await axios.post('http://localhost:5000/api/message/newMessages', sandesh)
+    const {data} = await axios.post('https://batiyaloapi.onrender.com/api/message/newMessages', sandesh)
     setMessages([...messages,data])
     setNewmessage('')
 }
